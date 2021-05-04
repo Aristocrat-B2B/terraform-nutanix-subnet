@@ -1,5 +1,5 @@
 data "nutanix_cluster" "cluster" {
-  name = "var.nutanix_cluster_name"
+  name = var.nutanix_cluster_name
 }
 
 resource "nutanix_subnet" "subnet" {
