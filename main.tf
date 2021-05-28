@@ -8,10 +8,10 @@ resource "nutanix_subnet" "subnet" {
   name                         = var.vlan[count.index]["subnet_name"]
   vlan_id                      = var.vlan[count.index]["vlan_id"]
   subnet_type                  = "VLAN"
-  prefix_length                = 24
+  prefix_length                = var.vlan[count.index]["cidr_length"]
   default_gateway_ip           = var.vlan[count.index]["default_gateway_ip"]
   subnet_ip                    = var.vlan[count.index]["subnet_ip"]
   ip_config_pool_list_ranges   = var.vlan[count.index]["pool_range"]
-  dhcp_domain_name_server_list = ["8.8.8.8", "4.2.2.2"]
-  dhcp_domain_search_list      = ["nutanix.com", "eng.nutanix.com"]
+  dhcp_domain_name_server_list = var.vlan[count.index]["dhcp_domain_name_server_list"]
+  dhcp_domain_search_list      = var.vlan[count.index]["dhcp_domain_search_list"]
 }
