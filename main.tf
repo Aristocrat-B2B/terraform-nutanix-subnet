@@ -3,6 +3,9 @@ data "nutanix_cluster" "cluster" {
 }
 
 resource "nutanix_subnet" "subnet" {
+  trigger = {
+  }
+
   cluster_uuid                 = data.nutanix_cluster.cluster.metadata.uuid
   count                        = length(var.vlan)
   name                         = var.vlan[count.index]["subnet_name"]
