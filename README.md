@@ -5,7 +5,7 @@ through the [Terraform registry](https://registry.terraform.io/modules/terraform
 
 ## Assumptions
 
-* You want to create one or Nutanix subnets
+* You want to create one or more Nutanix subnets
 
 ## Usage example
 
